@@ -131,8 +131,30 @@
 
 
             });
-        });
 
+            $("#unitstokwacha-tab").on('shown.bs.tab',function () {
+                // alert("Hello");
+                $("#units1").on('keyup',function () {
+                    // alert("Hello");
+                    var units = $("#units1").val();
+                    //get repsonse after calculation from server side
+                    $.ajax({
+                        type: 'GET',
+                        url: '/getAmount/'+units,
+                        dataType: 'json',
+                        success: function (data) {
+                            //populate field with units
+                            $('#expectedamount').val(data.amount);
+                        }
+                    });
+
+
+
+                });
+
+            });
+
+        });
 
 
     </script>

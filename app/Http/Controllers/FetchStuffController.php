@@ -68,11 +68,49 @@ class FetchStuffController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getCompanyDetsById($id)
+    public function getAmount($units)
     {
-        $companydets_array = DB::table('invoices')->where('id',$id)->get();
+        //check bands
+        /*
+        * BANDS
+        * ---------
+        * R1
+        * 100units -> K47
+        * 200units -> k170
+        * 300units -> k217 and above
+        * */
 
-        return response()->json(['companydets_array'=>$companydets_array]);
+        $R1units = 0.00;
+        $R2units = 0.00;
+        $R3units = 0.00;
+
+        //if units < k47, do this
+        if ($units <= 100){
+            $amount = $units * 0.47;
+        }else
+
+            if($units >= 101 && $units <= 200){
+                $R1units = 100;
+                $amount = (($units - $R1units)*(1.2 * 0.85)) + 55.93 ;
+            }else{
+                $R1units = 100;
+
+                $R2units = (170 / 0.85);
+
+                $R3units = (-$R1units - $R2units) + $units ;
+
+                $amount = ($R3units * (1.2 * 1.94)) + 258.23 ;
+
+
+            }
+
+        //calculate tax here
+        $vat = $amount * 0.16;
+        $excise = $amount * 0.03;
+        $totalTax = $vat + $excise;
+        $amountAfterTax = $amount - $totalTax;
+        //return units
+        return response()->json(["amount"=>$amount]);
 
     }
 

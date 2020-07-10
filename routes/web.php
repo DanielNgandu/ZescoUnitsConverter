@@ -24,5 +24,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/converter', 'MainController@index')->name('converter');
 
 //API
-
 Route::get('/getUnits/{amount}', 'FetchStuffController@getUnits');
+
+Route::get('/getAmount/{units}', 'FetchStuffController@getAmount');
