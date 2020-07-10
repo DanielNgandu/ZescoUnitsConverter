@@ -12,11 +12,53 @@ class FetchStuffController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getAllCompanies()
+    public function getUnits($amount)
     {
-        $companydets_array = DB::table('invoices')->get();
+        //populate clients details
+//            $amount = 0.00;
+//            $units =0.00;
+//            $amountAfterTax = 0.00;
 
-        return response()->json(['companydets_array'=>$companydets_array]);
+        //calculate tax here
+        $vat = $amount * 0.16;
+        $excise = $amount * 0.03;
+        $totalTax = $vat + $excise;
+        $amountAfterTax = $amount - $totalTax;
+
+
+            //check bands
+            /*
+            * BANDS
+            * ---------
+            * R1
+            * 100units -> K47
+            * 200units -> k170
+            * 300units -> k217 and above
+            * */
+
+            $R1units = 0.00;
+            $R2units = 0.00;
+            $R3units = 0.00;
+
+            //if units < k47, do this
+            if ($amountAfterTax < 47){
+                $units = $amount/0.47;
+            }else
+
+                if($amountAfterTax >= 48 && $amountAfterTax <= 217){
+                    $R1units = 100;
+                    $units = (($amount - 55.93)/(1.2 * 0.85)) + $R1units;
+                }else{
+                    $R1units = 100;
+
+                    $R2units = (170 / 0.85);
+
+                    $R3units = (($amount - 258.23)/(1.2 * 1.94));
+
+                    $units = $R1units + $R2units + $R3units;
+                }
+             //return units
+        return response()->json(["units"=>$units]);
 
     }
 

@@ -115,44 +115,19 @@
                 $('#excise').val(excise);
                 $('#totalTax').val(totalTax);
                 $('#amountAfterTax').val(amountAfterTax);
+                //get repsonse after calculation from server side
+                $.ajax({
+                    type: 'GET',
+                    url: '/getUnits/'+amount,
+                    dataType: 'json',
+                    success: function (data) {
 
+                    // console.log(data.units)
+                        //populate field with units
+                        $('#units').val(data.units);
+                    }
+                });
 
-
-                //check bands
-                /*
-                * BANDS
-                * ---------
-                * R1
-                * 100units -> K47
-                * 200units -> k170
-                * 300units -> k217 and above
-                * */
-
-                var R1units = 0.00;
-                var R2units = 0.00;
-                var R3units = 0.00;
-
-                //if units < k47, do this
-                if (amountAfterTax < 47){
-                    units = amount/0.47;
-                }else
-
-                if(amountAfterTax >= 48 && amountAfterTax <= 217){
-                    units = ((amount - 55.93)/(1.2 * 0.85));
-                }else{
-                    R1units = 100;
-
-                    R2units = (170 / 0.85);
-
-                    R3units = ((amount - 259)/(1.2 * 1.94));
-
-                    units = R1units + R2units + R3units;
-                }
-
-
-
-                //populate field with units
-                $('#units').val(units);
 
 
             });
@@ -163,4 +138,5 @@
     </script>
 
 </body>
+{{--Developed by: Daniel Ng`andu--}}
 </html>

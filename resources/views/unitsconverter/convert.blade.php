@@ -56,7 +56,7 @@
                                 <label for="totalTax" class="col-md-4 col-form-label text-md-right">{{ __('Total Tax Deducted (K)') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="totalTax" type="number" class="form-control @error('totalTax') is-invalid @enderror" name="totalTax" value="{{ old('excise') }}" required autocomplete="excise" autofocus placeholder="3% of Amount...">
+                                    <input id="totalTax" type="number" class="form-control @error('totalTax') is-invalid @enderror" name="totalTax" value="{{ old('excise') }}" required autocomplete="excise" autofocus placeholder="K 0.00">
 
                                     @error('totalTax')
                                     <span class="invalid-feedback" role="alert">
@@ -69,7 +69,7 @@
                                 <label for="amountAfterTax" class="col-md-4 col-form-label text-md-right">{{ __('Amount After Tax(K)') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="amountAfterTax" type="number" class="form-control @error('amountAfterTax') is-invalid @enderror" name="amountAfterTax" value="{{ old('amountAfterTax') }}" required autocomplete="amountAfterTax" autofocus placeholder="0.00">
+                                    <input id="amountAfterTax" type="number" class="form-control @error('amountAfterTax') is-invalid @enderror" name="amountAfterTax" value="{{ old('amountAfterTax') }}" required autocomplete="amountAfterTax" autofocus placeholder="K 0.00">
 
                                     @error('totalTax')
                                     <span class="invalid-feedback" role="alert">
