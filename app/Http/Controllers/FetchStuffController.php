@@ -12,7 +12,9 @@ class FetchStuffController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getUnits($amount)
+
+    //1st purchase
+    public function getUnits1($amount1)
     {
         //populate clients details
 //            $amount = 0.00;
@@ -20,10 +22,10 @@ class FetchStuffController extends Controller
 //            $amountAfterTax = 0.00;
 
         //calculate tax here
-        $vat = $amount * 0.16;
-        $excise = $amount * 0.03;
+        $vat = $amount1 * 0.16;
+        $excise = $amount1 * 0.03;
         $totalTax = $vat + $excise;
-        $amountAfterTax = $amount - $totalTax;
+        $amountAfterTax = $amount1 - $totalTax;
 
 
             //check bands
@@ -42,27 +44,107 @@ class FetchStuffController extends Controller
 
             //if units < k47, do this
             if ($amountAfterTax < 47){
-                $units = $amount/0.47;
+                $units = $amount1/0.47;
             }else
 
                 if($amountAfterTax >= 48 && $amountAfterTax <= 217){
                     $R1units = 100;
-                    $units = (($amount - 55.93)/(1.2 * 0.85)) + $R1units;
+                    $units = (($amount1 - 55.93)/(1.2 * 0.85)) + $R1units;
                 }else{
                     $R1units = 100;
 
                     $R2units = (170 / 0.85);
 
-                    $R3units = (($amount - 258.23)/(1.2 * 1.94));
+                    $R3units = (($amount1 - 258.23)/(1.2 * 1.94));
 
                     $units = $R1units + $R2units + $R3units;
                 }
              //return units
-        return response()->json(["units"=>$units]);
+        return response()->json(["units1"=>number_format((float)$units,2,'.',',')]);
 
     }
+    //2nd purchase
+    public function getUnits2($amount2)
+    {
+        //populate clients details
+//            $amount = 0.00;
+//            $units =0.00;
+//            $amountAfterTax = 0.00;
+
+        //calculate tax here
+        $vat = $amount2 * 0.16;
+        $excise = $amount2 * 0.03;
+        $totalTax = $vat + $excise;
+        $amountAfterTax = $amount2 - $totalTax;
 
 
+        //check bands
+        /*
+        * BANDS
+        * ---------
+        * R1
+        * 100units -> K47
+        * 200units -> k170
+        * 300units -> k217 and above
+        * */
+
+        $R1units = 0.00;
+        $R2units = 0.00;
+        $R3units = 0.00;
+
+        //if units < k47, do this
+
+            if($amountAfterTax >= 48 && $amountAfterTax <= 217){
+                $R1units = 100;
+                $units = (($amount2 - 55.93)/(1.2 * 0.85)) + $R1units;
+            }else{
+                $R1units = 100;
+
+                $R2units = (170 / 0.85);
+
+                $R3units = (($amount2 - 258.23)/(1.2 * 1.94));
+
+                $units = $R2units + $R3units;
+            }
+        //return units
+        return response()->json(["units2"=>number_format((float)$units,2,'.',',')]);
+
+    }
+    //3rd purchase
+    public function getUnits3($amount3)
+    {
+
+        //calculate tax here
+        $vat = $amount3 * 0.16;
+        $excise = $amount3 * 0.03;
+        $totalTax = $vat + $excise;
+        $amountAfterTax = $amount3 - $totalTax;
+
+
+        //check bands
+        /*
+        * BANDS
+        * ---------
+        * R1
+        * 100units -> K47
+        * 200units -> k170
+        * 300units -> k217 and above
+        * */
+
+        $R1units = 0.00;
+        $R2units = 0.00;
+        $R3units = 0.00;
+
+
+                $R1units = 100;
+                $R3units = (($amount3 - 258.23)/(1.2 * 1.94));
+
+                $units = $R1units + $R2units + $R3units;
+
+        //return units
+        return response()->json(["units3"=>number_format((float)$units,2,'.',',')]);
+
+    }
     /**
      * Display a listing of the resource.
      *

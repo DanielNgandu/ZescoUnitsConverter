@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('unitsconverter.convert');
 });
 
 
@@ -24,6 +24,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/converter', 'MainController@index')->name('converter');
 
 //API
-Route::get('/getUnits/{amount}', 'FetchStuffController@getUnits');
+Route::get('/getUnits1/{amount}', 'FetchStuffController@getUnits1');
+Route::get('/getUnits2/{amount}', 'FetchStuffController@getUnits2');
+Route::get('/getUnits3/{amount}', 'FetchStuffController@getUnits3');
 
 Route::get('/getAmount/{units}', 'FetchStuffController@getAmount');

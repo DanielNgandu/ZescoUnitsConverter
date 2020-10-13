@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Home | ZescoUnitsConverter</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -23,6 +23,25 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
+
+    <!--Google Ads-->
+<script data-ad-client="ca-pub-8016621065567450" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!--End Google Ads-->
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5f8607eb2901b92076932338/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 
 </head>
 <body>
@@ -48,11 +67,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="#">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="#">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -118,19 +137,94 @@
                 //get repsonse after calculation from server side
                 $.ajax({
                     type: 'GET',
-                    url: '/getUnits/'+amount,
+                    url: '/getUnits1/'+amount,
                     dataType: 'json',
                     success: function (data) {
 
                     // console.log(data.units)
                         //populate field with units
-                        $('#units').val(data.units);
+                        $('#units').val(data.units1);
                     }
                 });
 
 
 
             });
+
+
+            //2nd purchase
+            $("#v-pills-2ndpurchase-tab").on('shown.bs.tab',function () {
+                $("#amount2").on('keyup',function () {
+                    var amount = $("#amount2").val();
+                    var vat = 0.00;
+                    var excise = 0.00;
+                    var totalTax =0.00;
+                    var amountAfterTax =0.00;
+                    var units =0.00;
+                    //calculate tax here
+                    vat = amount * 0.16;
+                    excise = amount * 0.03;
+                    totalTax = vat + excise;
+                    amountAfterTax = amount - totalTax;
+                    //populate fields
+                    $('#vat2').val(vat);
+                    $('#excise2').val(excise);
+                    $('#totalTax2').val(totalTax);
+                    $('#amountAfterTax2').val(amountAfterTax);
+                    //get repsonse after calculation from server side
+                    $.ajax({
+                        type: 'GET',
+                        url: '/getUnits2/'+amount,
+                        dataType: 'json',
+                        success: function (data) {
+
+                            // console.log(data.units)
+                            //populate field with units
+                            $('#units2').val(data.units2);
+                        }
+                    });
+
+                });
+
+            });
+
+            //3 or more purchases
+            $("#v-pills-3rdpluspurchase-tab").on('shown.bs.tab',function () {
+                $("#amount3").on('keyup',function () {
+                    var amount = $("#amount3").val();
+                    var vat = 0.00;
+                    var excise = 0.00;
+                    var totalTax =0.00;
+                    var amountAfterTax =0.00;
+                    var units =0.00;
+                    //calculate tax here
+                    vat = amount * 0.16;
+                    excise = amount * 0.03;
+                    totalTax = vat + excise;
+                    amountAfterTax = amount - totalTax;
+                    //populate fields
+                    $('#vat3').val(vat);
+                    $('#excise3').val(excise);
+                    $('#totalTax3').val(totalTax);
+                    $('#amountAfterTax3').val(amountAfterTax);
+                    //get repsonse after calculation from server side
+                    $.ajax({
+                        type: 'GET',
+                        url: '/getUnits3/'+amount,
+                        dataType: 'json',
+                        success: function (data) {
+
+                            // console.log(data.units)
+                            //populate field with units
+                            $('#units3').val(data.units3);
+                        }
+                    });
+
+                });
+
+            });
+
+
 
             $("#unitstokwacha-tab").on('shown.bs.tab',function () {
                 // alert("Hello");
