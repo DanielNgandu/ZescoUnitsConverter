@@ -6,12 +6,12 @@
             <div class="col-md-8">
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="kwachatounits-tab" data-toggle="pill" href="#kwachatounits"
-                           role="tab" aria-controls="kwachatounits" aria-selected="true">Kwacha to Units</a>
+                        <a class="nav-link active font-weight-bolder" id="kwachatounits-tab" data-toggle="pill" href="#kwachatounits"
+                           role="tab" aria-controls="kwachatounits" aria-selected="true">Kwacha (K) -> Units</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="unitstokwacha-tab" data-toggle="pill" href="#unitstokwacha" role="tab"
-                           aria-controls="pills-profile" aria-selected="false">Units to Kwacha</a>
+                        <a class="nav-link font-weight-bolder" id="unitstokwacha-tab" data-toggle="pill" href="#unitstokwacha" role="tab"
+                           aria-controls="pills-profile" aria-selected="false">Units -> Kwacha (K)</a>
                     </li>
 
                 </ul>
@@ -22,8 +22,8 @@
                  aria-labelledby="kwachatounits-tab">
                 <div class="row justify-content-center">
                     <div class="col-md-8">
-                        <div class="card">
-                            <div class="card-header">{{ __('Kwacha to Units Converter') }}</div>
+                        <div class="card border-primary mb-3" >
+                            <div class="card-header">{{ __('Kwacha (K) -> Units Converter') }}</div>
 
                             <div class="card-body">
                                 <div class="row">
@@ -412,8 +412,9 @@
             <div class="tab-pane fade" id="unitstokwacha" role="tabpanel" aria-labelledby="unitstokwacha-tab">
                 <div class="row justify-content-center">
                     <div class="col-md-8">
-                        <div class="card">
-                            <div class="card-header">{{ __('Units to Kwacha Converter') }}</div>
+                        <div class="card border-primary mb-3" >
+
+                        <div class="card-header ">{{ __('Units -> Kwacha Converter') }}</div>
 
                             <div class="card-body">
                                 <form>

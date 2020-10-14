@@ -42,7 +42,179 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+<style>
+    .site-footer
+    {
+        padding:45px 0 20px;
+        font-size:15px;
+        line-height:24px;
+    }
+    .site-footer hr
+    {
+        border-top-color:#bbb;
+        opacity:0.5
+    }
+    .site-footer hr.small
+    {
+        margin:20px 0
+    }
+    .site-footer h6
+    {
+        color:#fff;
+        font-size:16px;
+        text-transform:uppercase;
+        margin-top:5px;
+        letter-spacing:2px
+    }
+    .site-footer a
+    {
+        color:#737373;
+    }
+    .site-footer a:hover
+    {
+        color:#3366cc;
+        text-decoration:none;
+    }
+    .footer-links
+    {
+        padding-left:0;
+        list-style:none
+    }
+    .footer-links li
+    {
+        display:block
+    }
+    .footer-links a
+    {
+        color:#737373
+    }
+    .footer-links a:active,.footer-links a:focus,.footer-links a:hover
+    {
+        color:#3366cc;
+        text-decoration:none;
+    }
+    .footer-links.inline li
+    {
+        display:inline-block
+    }
+    .site-footer .social-icons
+    {
+        text-align:right
+    }
+    .site-footer .social-icons a
+    {
+        width:40px;
+        height:40px;
+        line-height:40px;
+        margin-left:6px;
+        margin-right:0;
+        border-radius:100%;
+        background-color:#33353d
+    }
+    .copyright-text
+    {
+        margin:0
+    }
+    @media (max-width:991px)
+    {
+        .site-footer [class^=col-]
+        {
+            margin-bottom:30px
+        }
+    }
+    @media (max-width:767px)
+    {
+        .site-footer
+        {
+            padding-bottom:0
+        }
+        .site-footer .copyright-text,.site-footer .social-icons
+        {
+            text-align:center
+        }
+    }
+    .social-icons
+    {
+        padding-left:0;
+        margin-bottom:0;
+        list-style:none
+    }
+    .social-icons li
+    {
+        display:inline-block;
+        margin-bottom:4px
+    }
+    .social-icons li.title
+    {
+        margin-right:15px;
+        text-transform:uppercase;
+        color:#96a2b2;
+        font-weight:700;
+        font-size:13px
+    }
+    .social-icons a{
+        background-color:#eceeef;
+        color:#818a91;
+        font-size:16px;
+        display:inline-block;
+        line-height:44px;
+        width:44px;
+        height:44px;
+        text-align:center;
+        margin-right:8px;
+        border-radius:100%;
+        -webkit-transition:all .2s linear;
+        -o-transition:all .2s linear;
+        transition:all .2s linear
+    }
+    .social-icons a:active,.social-icons a:focus,.social-icons a:hover
+    {
+        color:#fff;
+        background-color:#29aafe
+    }
+    .social-icons.size-sm a
+    {
+        line-height:34px;
+        height:34px;
+        width:34px;
+        font-size:14px
+    }
+    .social-icons a.facebook:hover
+    {
+        background-color:#3b5998
+    }
+    .social-icons a.twitter:hover
+    {
+        background-color:#00aced
+    }
+    .social-icons a.linkedin:hover
+    {
+        background-color:#007bb6
+    }
+    .social-icons a.dribbble:hover
+    {
+        background-color:#ea4c89
+    }
+    @media (max-width:767px)
+    {
+        .social-icons li.title
+        {
+            display:block;
+            margin-right:0;
+            font-weight:600
+        }
+    }
 
+
+/*    background color*/
+    body {
+        background: #C9D6FF;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+    }
+</style>
 </head>
 <body>
     <div id="app">
@@ -102,14 +274,38 @@ s0.parentNode.insertBefore(s1,s0);
             @yield('content')
         </main>
         <!-- Footer -->
-        <footer class="page-footer font-small bg-transparent">
-
-            <!-- Copyright -->
-            <div class="footer-copyright text-center py-3 fixed-bottom">© 2020 Copyright:
-                <a href="https://danielngandu.com/"> Daniel Ng`andu & Jethro Mwanza</a>
+        <!-- Site footer -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <h6>About</h6>
+                        <p class="text-justify">A simple units converter to help residential households to easily predict the units or amount of money
+                        needed to be allocated in a months on electricity, thus no more guess work trying to figure out how many units x kwacha will buy.
+                            Feedback is highly appreciated. Contact us for more solutions like this
+                        </p>
+                    </div>
+                </div>
+                <hr>
             </div>
-            <!-- Copyright -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-6 col-xs-12">
+                        <p class="copyright-text">© 2020 Copyright:
+                            <a href="https://danielngandu.com/"> Daniel Ng`andu & Jethro Mwanza</a>
+                        </p>
+                    </div>
 
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <ul class="social-icons">
+                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </footer>
         <!-- Footer -->
     </div>
