@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active font-weight-bolder" id="kwachatounits-tab" data-toggle="pill" href="#kwachatounits"
+                        <a class="nav-link active font-weight-bolder " id="kwachatounits-tab" data-toggle="pill" href="#kwachatounits"
                            role="tab" aria-controls="kwachatounits" aria-selected="true">Kwacha (K) -> Units</a>
                     </li>
                     <li class="nav-item">
@@ -39,7 +39,7 @@
                                                 Purchase</a>
                                             <a class="nav-link" id="v-pills-3rdpluspurchase-tab" data-toggle="pill"
                                                href="#v-pills-3rdpluspurchase" role="tab"
-                                               aria-controls="v-pills-3rdpluspurchase" aria-selected="false">3+ times
+                                               aria-controls="v-pills-3rdpluspurchase" aria-selected="false">3x
                                                 Purchase</a>
                                         </div>
                                     </div>
@@ -145,7 +145,7 @@
                                                     </div>
                                                     <div class="form-group row">
                                                         <label for="units"
-                                                               class="col-md-4 col-form-label text-md-right">{{ __('Expected Units') }}</label>
+                                                               class="col-md-4 col-form-label text-md-right">{{ __('Expected Units(KWh)') }}</label>
 
                                                         <div class="col-md-6">
                                                             <input id="units" type="number"
@@ -263,7 +263,7 @@
                                                     </div>
                                                     <div class="form-group row">
                                                         <label for="units"
-                                                               class="col-md-4 col-form-label text-md-right">{{ __('Expected Units') }}</label>
+                                                               class="col-md-4 col-form-label text-md-right">{{ __('Expected Units(KWh)') }}</label>
 
                                                         <div class="col-md-6">
                                                             <input id="units2" type="number"
@@ -381,7 +381,7 @@
                                                     </div>
                                                     <div class="form-group row">
                                                         <label for="units"
-                                                               class="col-md-4 col-form-label text-md-right">{{ __('Expected Units') }}</label>
+                                                               class="col-md-4 col-form-label text-md-right">{{ __('Expected Units(KWh)') }}</label>
 
                                                         <div class="col-md-6">
                                                             <input id="units3" type="number"
