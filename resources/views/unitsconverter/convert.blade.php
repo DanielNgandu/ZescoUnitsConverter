@@ -4,13 +4,15 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <ul class="nav nav-pills mb-3 btn-group" id="pills-tab" role="tablist">
+
                     <li class="nav-item">
-                        <a class="nav-link active font-weight-bolder " id="kwachatounits-tab" data-toggle="pill" href="#kwachatounits"
+                        <a class="btn btn-lg btn-dark active font-weight-bolder " id="kwachatounits-tab" data-toggle="pill" href="#kwachatounits"
                            role="tab" aria-controls="kwachatounits" aria-selected="true">Kwacha (K) -> Units</a>
                     </li>
+                    &nbsp;&nbsp;
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bolder" id="unitstokwacha-tab" data-toggle="pill" href="#unitstokwacha" role="tab"
+                        <a class="btn btn-lg btn-dark font-weight-bolder" id="unitstokwacha-tab" data-toggle="pill" href="#unitstokwacha" role="tab"
                            aria-controls="pills-profile" aria-selected="false">Units -> Kwacha (K)</a>
                     </li>
 

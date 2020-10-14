@@ -209,9 +209,10 @@
 
         /*    background color*/
         body {
-            background: #C9D6FF; /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF); /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: #BBD2C5;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 
 
         }
@@ -290,8 +291,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-12">
-                    <h2 class="lead text-left">About</h2>
-                    <p class="text-justify">A simple units converter to help residential households to easily predict
+                    <h2 class="lead text-left" style=" color: white;">About</h2>
+                    <p class="text-justify" style=" color: white;">A simple units converter to help residential households to easily predict
                         the units or amount of money
                         needed to be allocated in a months on electricity, thus no more guess work trying to figure out
                         how many units x Kwacha will buy. And the best part, its Free!
@@ -304,8 +305,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-sm-6 col-xs-12">
-                    <p class="copyright-text">© 2020 Copyright:
-                        <a href="https://danielngandu.com/"> Daniel Ng`andu & Jethro Mwanza</a>
+                    <p class="copyright-text" style=" color: white;">© 2020 Copyright:
+                        <a href="https://danielngandu.com/" style="color: blue;"> Daniel Ng`andu & Jethro Mwanza</a>
                     </p>
                 </div>
 
