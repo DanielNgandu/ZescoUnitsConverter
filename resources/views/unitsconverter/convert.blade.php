@@ -2,6 +2,12 @@
 
 @section('content')
     <div class="container">
+        <!-- Image loader -->
+        <div id='loader' style='display: none;'>
+            <img src='https://loading.io/asset/417549' width='32px' height='32px'>
+
+        </div>
+        <!-- Image loader -->
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <ul class="nav nav-pills mb-3 btn-group" id="pills-tab" role="tablist">
@@ -58,20 +64,24 @@
                                                                class="col-md-4 col-form-label text-md-right">{{ __('Amount (K)') }}</label>
 
                                                         <div class="col-md-6">
-                                                            <input id="amount" type="number"
-                                                                   class="form-control @error('amount') is-invalid @enderror"
-                                                                   name="amount" value="{{ old('amount') }}" required
-                                                                   autocomplete="amount" autofocus>
+                                                    <div class="input-group mb-3">
+                                                        <input id="amount" type="number"
+                                                               class="form-control @error('amount') is-invalid @enderror"
+                                                               name="amount" value="{{ old('amount') }}" required
+                                                               autocomplete="amount" autofocus>
 
-                                                            @error('amount')
-                                                            <span class="invalid-feedback" role="alert">
+                                                        @error('amount')
+                                                        <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                                            @enderror
+                                                        @enderror
+                                                        <div class="input-group-prepend">
+                                                            <button class="btn btn-outline-success" id="calculateBtn1" type="button">Calculate</button>
+                                                        </div>
+
+                                                    </div>
                                                         </div>
                                                     </div>
-
-
                                                     <div class="form-group row">
                                                         <label for="vat"
                                                                class="col-md-4 col-form-label text-md-right">{{ __('Vat (K) (16%)') }}</label>
@@ -176,16 +186,22 @@
                                                                class="col-md-4 col-form-label text-md-right">{{ __('Amount (K)') }}</label>
 
                                                         <div class="col-md-6">
-                                                            <input id="amount2" type="number"
-                                                                   class="form-control @error('amount') is-invalid @enderror"
-                                                                   name="amount2" value="{{ old('amount') }}" required
-                                                                   autocomplete="amount" autofocus>
+                                                            <div class="input-group mb-3">
+                                                                <input id="amount2" type="number"
+                                                                       class="form-control @error('amount2') is-invalid @enderror"
+                                                                       name="amount2" value="{{ old('amount2') }}" required
+                                                                       autocomplete="amount" autofocus>
 
-                                                            @error('amount')
-                                                            <span class="invalid-feedback" role="alert">
+                                                                @error('amount2')
+                                                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                                            @enderror
+                                                                @enderror
+                                                                <div class="input-group-prepend">
+                                                                    <button class="btn btn-outline-success" id="calculateBtn2" type="button">Calculate</button>
+                                                                </div>
+
+                                                            </div>
                                                         </div>
                                                     </div>
 
@@ -289,25 +305,30 @@
 
                                                     @csrf
 
+
                                                     <div class="form-group row">
                                                         <label for="name"
                                                                class="col-md-4 col-form-label text-md-right">{{ __('Amount (K)') }}</label>
 
                                                         <div class="col-md-6">
-                                                            <input id="amount3" type="number"
-                                                                   class="form-control @error('amount3') is-invalid @enderror"
-                                                                   name="amount" value="{{ old('amount3') }}" required
-                                                                   autocomplete="amount" autofocus>
+                                                            <div class="input-group mb-3">
+                                                                <input id="amount3" type="number"
+                                                                       class="form-control @error('amount3') is-invalid @enderror"
+                                                                       name="amount3" value="{{ old('amount3') }}" required
+                                                                       autocomplete="amount" autofocus>
 
-                                                            @error('amount3')
-                                                            <span class="invalid-feedback" role="alert">
+                                                                @error('amount3')
+                                                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                                            @enderror
+                                                                @enderror
+                                                                <div class="input-group-prepend">
+                                                                    <button class="btn btn-outline-success" id="calculateBtn3" type="button">Calculate</button>
+                                                                </div>
+
+                                                            </div>
                                                         </div>
                                                     </div>
-
-
                                                     <div class="form-group row">
                                                         <label for="vat"
                                                                class="col-md-4 col-form-label text-md-right">{{ __('Vat (K) (16%)') }}</label>

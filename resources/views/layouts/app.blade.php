@@ -221,6 +221,10 @@
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             text-align: center;
         }
+
+
+
+
     </style>
 </head>
 <body>
@@ -323,7 +327,9 @@
     $(document).ready(function () {
 
         //populate clients details
-        $("#amount").on('keyup', function () {
+        $("#calculateBtn1").on('click', function () {
+            $("#loader").show();
+
             var amount = $("#amount").val();
             var vat = 0.00;
             var excise = 0.00;
@@ -346,6 +352,7 @@
                 url: '/getUnits1/' + amount,
                 dataType: 'json',
                 success: function (data) {
+                    $("#loader").hide();
 
                     // console.log(data.units)
                     //populate field with units
@@ -359,7 +366,7 @@
 
         //2nd purchase
         $("#v-pills-2ndpurchase-tab").on('shown.bs.tab', function () {
-            $("#amount2").on('keyup', function () {
+            $("#calculateBtn2").on('click', function () {
                 var amount = $("#amount2").val();
                 var vat = 0.00;
                 var excise = 0.00;
@@ -395,7 +402,7 @@
 
         //3 or more purchases
         $("#v-pills-3rdpluspurchase-tab").on('shown.bs.tab', function () {
-            $("#amount3").on('keyup', function () {
+            $("#calculateBtn3").on('click', function () {
                 var amount = $("#amount3").val();
                 var vat = 0.00;
                 var excise = 0.00;
