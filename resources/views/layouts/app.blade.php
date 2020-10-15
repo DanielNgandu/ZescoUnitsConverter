@@ -223,8 +223,15 @@
         }
 
 
-
-
+        .pageloader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url("images/loader/loader.gif") 50% 50% no-repeat rgb(249, 249, 249);
+        }
     </style>
 </head>
 <body>
@@ -325,7 +332,7 @@
 </div>
 <script>
     $(document).ready(function () {
-
+        $(".pageloader").fadeOut("slow");
         //populate clients details
         $("#calculateBtn1").on('click', function () {
             $("#loader").show();

@@ -3,11 +3,21 @@
 @section('content')
     <div class="container">
         <!-- Image loader -->
-        <div id='loader' style='display: none;'>
-            <img src='https://loading.io/asset/417549' width='32px' height='32px'>
-
+        <div id='loader' style='display: none;margin-top: -100px;
+      margin-left: -100px; position: fixed;
+        top: 50%;
+      left: 50%;
+            width: 100;
+            height: 100;
+            z-index: 9999;'>
+         <img src="images/loader/units_loader.gif">
         </div>
         <!-- Image loader -->
+
+        <!--Page loader-->
+        <div class="pageloader"></div>
+        <!--Page loader-->
+
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <ul class="nav nav-pills mb-3 btn-group" id="pills-tab" role="tablist">
