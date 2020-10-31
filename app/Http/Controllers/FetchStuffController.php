@@ -60,7 +60,7 @@ class FetchStuffController extends Controller
                 $units = $R1units + $R2units + $R3units;
             }
         //return units
-        return response()->json(["units1" => number_format((float)$units, 2, '.', ',')]);
+        return response()->json(["units1" => number_format((float)$units, 2, '.', ','),"vat1"=>$vat,"exciseDuty1"=>$excise,"amountAfterTax1"=>$amountAfterTax]);
 
     }
 
@@ -97,16 +97,15 @@ class FetchStuffController extends Controller
 
         if ($amountAfterTax >= 1 && $amountAfterTax <= 201) {
             $units = ($amount2) / (1.01);
-        } elseif ($amountAfterTax >= 202 && $amountAfterTax <= 203) {
-            $units = ($amount2) / (1.01) + 200;
+
 
         } else {
-
-            $units = ($amount2) / (2.31) + 201;
+           //
+            $units = (($amount2-203) / (2.31)) + 201;
 
         }
         //return units
-        return response()->json(["units2" => number_format((float)$units, 2, '.', ',')]);
+        return response()->json(["units2" => number_format((float)$units, 2, '.', ','),"vat2"=>$vat,"exciseDuty2"=>$excise,"amountAfterTax2"=>$amountAfterTax]);
 
     }
 
@@ -124,7 +123,7 @@ class FetchStuffController extends Controller
         $units = ($amount3 / $R3bandPerUnit);
 
         //return units
-        return response()->json(["units3" => number_format((float)$units, 2, '.', ',')]);
+        return response()->json(["units3" => number_format((float)$units, 2, '.', ','),"vat3"=>$vat,"exciseDuty3"=>$excise,"amountAfterTax3"=>$amountAfterTax]);
 
     }
 

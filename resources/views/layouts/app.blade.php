@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126015511-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-126015511-1');
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -374,6 +383,8 @@
         //2nd purchase
         $("#v-pills-2ndpurchase-tab").on('shown.bs.tab', function () {
             $("#calculateBtn2").on('click', function () {
+                $("#loader").show();
+
                 var amount = $("#amount2").val();
                 var vat = 0.00;
                 var excise = 0.00;
@@ -396,6 +407,7 @@
                     url: '/getUnits2/' + amount,
                     dataType: 'json',
                     success: function (data) {
+                        $("#loader").hide();
 
                         // console.log(data.units)
                         //populate field with units
@@ -410,6 +422,8 @@
         //3 or more purchases
         $("#v-pills-3rdpluspurchase-tab").on('shown.bs.tab', function () {
             $("#calculateBtn3").on('click', function () {
+                $("#loader").show();
+
                 var amount = $("#amount3").val();
                 var vat = 0.00;
                 var excise = 0.00;
@@ -432,6 +446,7 @@
                     url: '/getUnits3/' + amount,
                     dataType: 'json',
                     success: function (data) {
+                        $("#loader").hide();
 
                         // console.log(data.units)
                         //populate field with units
@@ -445,7 +460,6 @@
 
 
         $("#unitstokwacha-tab").on('shown.bs.tab', function () {
-            // alert("Hello");
             $("#units1").on('keyup', function () {
                 // alert("Hello");
                 var units = $("#units1").val();

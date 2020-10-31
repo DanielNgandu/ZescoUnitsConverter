@@ -10,7 +10,7 @@
             width: 100;
             height: 100;
             z-index: 9999;'>
-         <img src="images/loader/units_loader.gif">
+            <img src="images/loader/units_loader.gif">
         </div>
         <!-- Image loader -->
 
@@ -23,12 +23,14 @@
                 <ul class="nav nav-pills mb-3 btn-group" id="pills-tab" role="tablist">
 
                     <li class="nav-item">
-                        <a class="btn btn-lg btn-dark active font-weight-bolder " id="kwachatounits-tab" data-toggle="pill" href="#kwachatounits"
+                        <a class="btn btn-lg btn-dark active font-weight-bolder " id="kwachatounits-tab"
+                           data-toggle="pill" href="#kwachatounits"
                            role="tab" aria-controls="kwachatounits" aria-selected="true">Kwacha (K) -> Units</a>
                     </li>
                     &nbsp;&nbsp;
                     <li class="nav-item">
-                        <a class="btn btn-lg btn-dark font-weight-bolder" id="unitstokwacha-tab" data-toggle="pill" href="#unitstokwacha" role="tab"
+                        <a class="btn btn-lg btn-dark font-weight-bolder" id="unitstokwacha-tab" data-toggle="pill"
+                           href="#unitstokwacha" role="tab"
                            aria-controls="pills-profile" aria-selected="false">Units -> Kwacha (K)</a>
                     </li>
 
@@ -40,12 +42,14 @@
                  aria-labelledby="kwachatounits-tab">
                 <div class="row justify-content-center">
                     <div class="col-md-8">
-                        <div class="card border-primary mb-3" >
+                        <div class="card border-primary mb-3">
                             <div class="card-header">{{ __('Kwacha (K) -> Units Converter') }}</div>
 
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-3">
+
+                                              <div class="row">
+                                    <div class="col-md-auto">
+
                                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
                                              aria-orientation="vertical">
                                             <a class="nav-link active" id="v-pills-1stpurchase-tab" data-toggle="pill"
@@ -61,7 +65,7 @@
                                                 Purchase</a>
                                         </div>
                                     </div>
-                                    <div class="col-9">
+                                                  <div class="col-md-auto">
                                         <div class="tab-content" id="v-pills-tabContent">
                                             <div class="tab-pane fade show active" id="v-pills-1stpurchase"
                                                  role="tabpanel" aria-labelledby="v-pills-1stpurchase-tab">
@@ -74,22 +78,25 @@
                                                                class="col-md-4 col-form-label text-md-right">{{ __('Amount (K)') }}</label>
 
                                                         <div class="col-md-6">
-                                                    <div class="input-group mb-3">
-                                                        <input id="amount" type="number"
-                                                               class="form-control @error('amount') is-invalid @enderror"
-                                                               name="amount" value="{{ old('amount') }}" required
-                                                               autocomplete="amount" autofocus>
+                                                            <div class="input-group mb-3">
+                                                                <input id="amount" type="number"
+                                                                       class="form-control @error('amount') is-invalid @enderror"
+                                                                       name="amount" value="{{ old('amount') }}"
+                                                                       required
+                                                                       autocomplete="amount" autofocus>
 
-                                                        @error('amount')
-                                                        <span class="invalid-feedback" role="alert">
+                                                                @error('amount')
+                                                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                                        @enderror
-                                                        <div class="input-group-prepend">
-                                                            <button class="btn btn-outline-success" id="calculateBtn1" type="button">Calculate</button>
-                                                        </div>
+                                                                @enderror
+                                                                <div class="input-group-prepend">
+                                                                    <button class="btn btn-outline-success"
+                                                                            id="calculateBtn1" type="button">Calculate
+                                                                    </button>
+                                                                </div>
 
-                                                    </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
@@ -199,7 +206,8 @@
                                                             <div class="input-group mb-3">
                                                                 <input id="amount2" type="number"
                                                                        class="form-control @error('amount2') is-invalid @enderror"
-                                                                       name="amount2" value="{{ old('amount2') }}" required
+                                                                       name="amount2" value="{{ old('amount2') }}"
+                                                                       required
                                                                        autocomplete="amount" autofocus>
 
                                                                 @error('amount2')
@@ -208,7 +216,9 @@
                                     </span>
                                                                 @enderror
                                                                 <div class="input-group-prepend">
-                                                                    <button class="btn btn-outline-success" id="calculateBtn2" type="button">Calculate</button>
+                                                                    <button class="btn btn-outline-success"
+                                                                            id="calculateBtn2" type="button">Calculate
+                                                                    </button>
                                                                 </div>
 
                                                             </div>
@@ -259,7 +269,8 @@
                                                         <div class="col-md-6">
                                                             <input id="totalTax2" type="number"
                                                                    class="form-control @error('totalTax2') is-invalid @enderror"
-                                                                   name="totalTax2" value="{{ old('totalTax2') }}" required
+                                                                   name="totalTax2" value="{{ old('totalTax2') }}"
+                                                                   required
                                                                    autocomplete="excise" autofocus placeholder="K 0.00"
                                                                    readonly="readonly">
 
@@ -324,7 +335,8 @@
                                                             <div class="input-group mb-3">
                                                                 <input id="amount3" type="number"
                                                                        class="form-control @error('amount3') is-invalid @enderror"
-                                                                       name="amount3" value="{{ old('amount3') }}" required
+                                                                       name="amount3" value="{{ old('amount3') }}"
+                                                                       required
                                                                        autocomplete="amount" autofocus>
 
                                                                 @error('amount3')
@@ -333,7 +345,9 @@
                                     </span>
                                                                 @enderror
                                                                 <div class="input-group-prepend">
-                                                                    <button class="btn btn-outline-success" id="calculateBtn3" type="button">Calculate</button>
+                                                                    <button class="btn btn-outline-success"
+                                                                            id="calculateBtn3" type="button">Calculate
+                                                                    </button>
                                                                 </div>
 
                                                             </div>
@@ -382,7 +396,8 @@
                                                         <div class="col-md-6">
                                                             <input id="totalTax3" type="number"
                                                                    class="form-control @error('totalTax3') is-invalid @enderror"
-                                                                   name="totalTax3" value="{{ old('totalTax3') }}" required
+                                                                   name="totalTax3" value="{{ old('totalTax3') }}"
+                                                                   required
                                                                    autocomplete="excise" autofocus placeholder="K 0.00"
                                                                    readonly="readonly">
 
@@ -445,9 +460,9 @@
             <div class="tab-pane fade" id="unitstokwacha" role="tabpanel" aria-labelledby="unitstokwacha-tab">
                 <div class="row justify-content-center">
                     <div class="col-md-8">
-                        <div class="card border-primary mb-3" >
+                        <div class="card border-primary mb-3">
 
-                        <div class="card-header ">{{ __('Units -> Kwacha Converter') }}</div>
+                            <div class="card-header ">{{ __('Units -> Kwacha Converter') }}</div>
 
                             <div class="card-body">
                                 <form>
