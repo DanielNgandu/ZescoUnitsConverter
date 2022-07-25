@@ -194,6 +194,15 @@
                                             </div>
                                             <div class="tab-pane fade" id="v-pills-2ndpurchase" role="tabpanel"
                                                  aria-labelledby="v-pills-2ndpurchase-tab">
+
+
+
+
+
+
+
+
+
                                                 <form>
 
                                                     @csrf
@@ -322,6 +331,12 @@
                                             </div>
                                             <div class="tab-pane fade" id="v-pills-3rdpluspurchase" role="tabpanel"
                                                  aria-labelledby="v-pills-3rdpluspurchase-tab">
+
+
+
+
+
+                                                 
                                                 <form>
 
                                                     @csrf
