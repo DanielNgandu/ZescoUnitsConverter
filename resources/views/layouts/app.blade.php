@@ -365,7 +365,7 @@
             //get repsonse after calculation from server side
             $.ajax({
                 type: 'GET',
-                url: '/getUnits1/' + amount,
+                url: 'http://localhost/CONTRIBUTIONS/ZescoUnitsConverter/public/getUnits1/' + amount,
                 dataType: 'json',
                 success: function (data) {
                     $("#loader").hide();
@@ -404,7 +404,7 @@
                 //get repsonse after calculation from server side
                 $.ajax({
                     type: 'GET',
-                    url: '/getUnits2/' + amount,
+                    url: 'http://localhost/CONTRIBUTIONS/ZescoUnitsConverter/public/getUnits2/' + amount,
                     dataType: 'json',
                     success: function (data) {
                         $("#loader").hide();
@@ -443,7 +443,7 @@
                 //get repsonse after calculation from server side
                 $.ajax({
                     type: 'GET',
-                    url: '/getUnits3/' + amount,
+                    url: 'http://localhost/CONTRIBUTIONS/ZescoUnitsConverter/public/getUnits3/' + amount,
                     dataType: 'json',
                     success: function (data) {
                         $("#loader").hide();
